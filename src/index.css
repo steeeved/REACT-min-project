@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .custom-button {
+    @apply px-6 py-3 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600;
+  }
+}
