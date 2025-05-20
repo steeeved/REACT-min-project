@@ -13,8 +13,8 @@ const testUsers: GitHubUser[] = [
   {
     id: 2,
     login: "testuser2",
-    avatar_url: "https://github.com/testuser.png",
-    html_url: "https://github.com/testuser",
+    avatar_url: "https://github.com/testuser2.png",
+    html_url: "https://github.com/testuser2",
   },
 ];
 
