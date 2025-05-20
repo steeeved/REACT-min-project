@@ -10,7 +10,7 @@ export function UserList({ users }: UserListProps) {
   }
 
   return (
-    <ul className="divide-y divide-gray-200 mt-4 grid grid-cols-4 gap-x-4">
+    <ul className="divide-y divide-gray-200 mt-4 grid grid-cols-4 gap-x-4" >
       {users.map((user) => (
         <li key={user.id} className="py-4 flex items-center space-x-4">
           <img

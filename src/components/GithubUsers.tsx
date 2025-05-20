@@ -4,7 +4,14 @@ import { Loader } from "./Loader";
 import { useGitHubSearch } from "../hooks/useGitHubSearch";
 
 export function GithubUsers() {
-  const { query, setQuery, users, loading, error } = useGitHubSearch();
+  const {
+    query,
+    setQuery,
+    users,
+    loading,
+    error,
+    pastResults: pastUsers,
+  } = useGitHubSearch();
 
   return (
     <div className="w-[100vw] min-h-[100vh] mx-auto p-4 flex flex-col items-center justify-center">
@@ -15,6 +22,7 @@ export function GithubUsers() {
       {loading && <Loader />}
       {error && <p className="text-red-500">{error}</p>}
       <UserList users={users} />
+      {pastUsers.length > 0 && pastUsers.map((e) => <h1>{e}</h1>)}
     </div>
   );
 }
