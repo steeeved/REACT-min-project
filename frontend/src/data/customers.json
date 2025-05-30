@@ -1,28 +1,32 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "firstName": "Stephen",
+    "title": "Mr",
     "lastName": "M",
+    "email": "coder@gmail.com",
     "orders": [
       {
         "timeStamp": 1747828013,
         "item": "Mac-Book M2",
         "price": 1400,
-        "customerId": 1,
+        "customerId": "1",
         "quantity": 1
       }
     ]
   },
   {
-    "id": 2,
+    "id": "2",
     "firstName": "John",
+    "title": "Mr",
     "lastName": "Doe",
+    "email": "coder@gmail.com",
     "orders": [
       {
         "timeStamp": 1747828013,
         "item": "Mac-Book M3",
         "price": 1500,
-        "customerId": 1,
+        "customerId": "1",
         "quantity": 1
       }
     ]

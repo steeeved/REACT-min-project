@@ -1,6 +1,6 @@
 import customerData from "../data/customers.json";
 import itemsData from "../data/items.json";
-import { customerSchema } from "../schemas/customer";
+import { CustomerSchema } from "../schemas/customer";
 import { itemSchema } from "../schemas/item";
 import OrderComponent from "../components/OrderComponent";
 import ItemComponent from "../components/itemComponent";
@@ -8,7 +8,9 @@ import { useState } from "react";
 import z from "zod";
 
 const OrderPage = () => {
-  const [customer, setCustomer] = useState(customerData[0]);
+  const [customer, setCustomer] = useState<z.infer<typeof CustomerSchema>>(
+    customerData[0]
+  );
 
   const placeOrder = (i: z.infer<typeof itemSchema>) => {
     const existingOrderIndex = customer.orders
@@ -41,13 +43,12 @@ const OrderPage = () => {
         orders: customer.orders ? [...customer.orders, order] : [order],
       });
     }
-    
   };
 
   return (
     <div className="h-screen mx-auto w-screen flex flex-col gap-10 align-center p-8 ">
       <div className="flex h-min gap-2 justify-center">
-        {customerData.map((c: z.infer<typeof customerSchema>) => (
+        {customerData.map((c: z.infer<typeof CustomerSchema>) => (
           <div className="p-2 rounded bg-amber-200">
             <h1>
               {c.firstName} {c.lastName}
