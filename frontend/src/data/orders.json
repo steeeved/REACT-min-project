@@ -1,0 +1,16 @@
+[
+  {
+    "timeStamp": 1747828013,
+    "item": "Mac-Book M2",
+    "price": 1400,
+    "customerId": "1",
+    "quantity": 1
+  },
+  {
+    "timeStamp": 1747828013,
+    "item": "Logitech Keypad",
+    "price": 400,
+    "customerId": "1",
+    "quantity": 1
+  }
+]

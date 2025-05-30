@@ -1,0 +1,32 @@
+[
+  {
+    "index": 1,
+    "name": "Mac-Book M2",
+    "price": 1400
+  },
+  {
+    "index": 2,
+    "name": "Logitech Keypad",
+    "price": 400
+  },
+  {
+    "index": 3,
+    "name": "Mac-Book M1",
+    "price": 1300
+  },
+  {
+    "index": 4,
+    "name": "Samsung Galaxy S22",
+    "price": 600
+  },
+  {
+    "index": 5,
+    "name": "Samsung Galaxy S25",
+    "price": 700
+  },
+  {
+    "index": 6,
+    "name": "Logitech Mouse",
+    "price": 150
+  }
+]
