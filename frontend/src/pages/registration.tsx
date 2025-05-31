@@ -161,7 +161,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="text"
           error={(errors.firstName && errors.firstName[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
         <FormInput
           label="Last Name"
@@ -170,7 +170,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="text"
           error={(errors.lastName && errors.lastName[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
         <FormInput
           label="Email Address"
@@ -179,7 +179,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="email"
           error={(errors.email && errors.email[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
 
         <button

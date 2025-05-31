@@ -1,15 +1,11 @@
 import React from "react";
 import { AlertCircle } from "lucide-react";
-import {
-  type RegistrationData,
-  customerRegistrationInputSchema,
-} from "../schemas/customer";
+import { customerRegistrationInputSchema } from "../schemas/customer";
 
 interface FormInputProps {
   label: string;
   name: string;
   value: string;
-  formData: RegistrationData;
   type: string;
   error: string;
   handleInputChange: (
@@ -25,7 +21,6 @@ const FormInput: React.FC<FormInputProps> = ({
   handleInputChange,
   type = "text",
 }) => {
-    
   const getMaxLength = (fieldName: string): number => {
     const schema =
       customerRegistrationInputSchema.shape[
@@ -70,7 +65,7 @@ const FormInput: React.FC<FormInputProps> = ({
       <div className="mt-1 flex justify-between">
         {error && (
           <div className="flex items-center text-red-600 text-sm">
-            <AlertCircle className="h-4 w-4 mr-1" />
+            <AlertCircle className="h-4 w-4 mr-1" data-testid="error-icon" />
             {error}
           </div>
         )}
