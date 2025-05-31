@@ -7,3 +7,5 @@ export const ordersSchema = z.object({
   customerId: z.string(),
   quantity: z.number(),
 });
+
+export type Order = z.infer<typeof ordersSchema>;

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle, User } from "lucide-react";
-import { v4 as uuidv4 } from "uuid";
 import {
-  CustomerSchema,
   customerRegistrationInputSchema,
   type RegistrationData,
   type FormErrors,
@@ -10,6 +8,7 @@ import {
 import z from "zod";
 import { titleOptions } from "../utils/general";
 import FormInput from "../components/FormInput";
+import { createCustomer } from "../api/createUser";
 
 const CustomerRegistrationForm = () => {
   const [formData, setFormData] = useState<RegistrationData>({
@@ -74,28 +73,18 @@ const CustomerRegistrationForm = () => {
     setIsSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
       const newCustomer = {
-        id: uuidv4(),
-        ...formData,
-        orders: [],
+        title: formData.title || "",
+        firstName: formData.firstName || "",
+        lastName: formData.lastName || "",
+        email: formData.email || "",
+        orders: ["a", "b"],
       };
 
-      const validatedCustomer = CustomerSchema.parse(newCustomer);
-      console.log("New customer registered:", validatedCustomer);
+      const { data } = await createCustomer(newCustomer);
+      console.log("New customer registered:", data);
 
       setIsSuccess(true);
-
-      setTimeout(() => {
-        setFormData({
-          title: undefined,
-          firstName: "",
-          lastName: "",
-          email: "",
-        });
-        setIsSuccess(false);
-      }, 3000);
     } catch (error) {
       console.error("Registration failed:", error);
       setErrors((prev) => ({
@@ -172,7 +161,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="text"
           error={(errors.firstName && errors.firstName[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
         <FormInput
           label="Last Name"
@@ -181,7 +170,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="text"
           error={(errors.lastName && errors.lastName[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
         <FormInput
           label="Email Address"
@@ -190,7 +179,7 @@ const CustomerRegistrationForm = () => {
           handleInputChange={handleInputChange}
           type="email"
           error={(errors.email && errors.email[0]) || ""}
-          formData={formData}
+          // formData={formData}
         />
 
         <button
